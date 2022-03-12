@@ -8,6 +8,16 @@ function Userlist () {
     // ex01 filling logic here
   }
 
+  function onButtonClicked() {
+    if (trayStatus === "closed")
+    {
+      setTrayStatus("open")
+    }else if (trayStatus === "open")
+    {
+      setTrayStatus("closed")
+    }
+  }
+
   return (
     <div className={"userlist "+trayStatus}>
       <div className="close-button" onClick={onButtonClicked}>x</div>

@@ -9,10 +9,12 @@
 
 .userlist.closed {
   width: 10px;
+  background-color: #db1717;
 }
 
 .userlist.open {
   width: 200px;
+  background-color: #0ddd1e;
 }
 
 .userlist .close-button {
@@ -31,7 +33,7 @@
 }
 
 .userlist .close-button:hover {
-  background-color: #cee740;
+  background-color: #e08309;
 }
 
 @media screen and (min-width: 768px) {
