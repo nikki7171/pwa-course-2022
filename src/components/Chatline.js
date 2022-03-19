@@ -26,10 +26,29 @@ function Chatline (props) {
         .then(data => setElement(data.gender));
     } 
     else if (text.startsWith("/randomfact")) {
+      fetch("https://uselessfacts.jsph.pl/random.json?language=en")
+        .then(res => res.json())
+        .then(data => setElement(data.text));
       // ex10-01 here: Implement randomfact using fetch & promise
       // https://uselessfacts.jsph.pl/random.json?language=en
       
     }
+    else if (text.startsWith("/nationalize")) {
+      const [, name] = text.split(" ");
+      fetch("https://api.nationalize.io/?name="+name)
+        .then(res => res.json())
+        .then(data => setElement(data.name + " => " + data.country[0].country_id));
+    }
+
+    else if (text.startsWith("/dogs")) {
+      fetch("https://dog.ceo/api/breeds/image/random")
+        .then(res => res.json())
+        .then(data => setElement(data.message));
+
+      // bonus 9. Dogs
+    }
+
+
   };
 
   useEffect(() => {
