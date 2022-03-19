@@ -43,7 +43,7 @@ function Chatline (props) {
     else if (text.startsWith("/dogs")) {
       fetch("https://dog.ceo/api/breeds/image/random")
         .then(res => res.json())
-        .then(data => setElement(data.message));
+        .then(data => setElement("<img src='"+data.message+"'/>"));
 
       // bonus 9. Dogs
     }
